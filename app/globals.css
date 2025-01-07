@@ -3,19 +3,36 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --smoky-black: hsl(0, 0%, 7%);
+  --eerie-black1: hsl(240, 2%, 13%);
+  --eerie-black2: hsl(240, 2%, 12%);
+  --jet: hsl(0, 0%, 22%);
+  --onyx: hsl(240, 1%, 17%);
+  --light-gray: hsl(0, 0%, 84%);
+  --light-gray70: hsla(0, 0%, 84%, .7);
+  --orange-yellow-crayola: hsl(45, 100%, 72%);
+  --white2: hsl(0, 0%, 98%);
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins), sans-serif;
+  background-color: var(--smoky-black);
+  color: var(--light-gray);
 }
+
+/* Add animation for page transitions */
+section {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

@@ -49,15 +49,13 @@ export default function Sidebar() {
   );
 }
 
-function ContactItem({
-  icon: Icon,
-  title,
-  info,
-}: {
-  icon: any;
+interface ContactItemProps {
+  icon: React.ComponentType<{ size: number }>;
   title: string;
   info: string;
-}) {
+}
+
+function ContactItem({ icon: Icon, title, info }: ContactItemProps) {
   return (
     <div className="flex items-center space-x-3">
       <div className="bg-onyx w-10 h-10 rounded-lg flex items-center justify-center text-orange-yellow-crayola">
@@ -70,11 +68,10 @@ function ContactItem({
     </div>
   );
 }
-
 function SocialIcon({ href, icon }: { href: string; icon: string }) {
   return (
     <a href={href} className="text-light-gray70 hover:text-light-gray">
-      <ion-icon name={icon} size="large"></ion-icon>
+      {/* <ion-icon name={icon} size="large"></ion-icon> */}
     </a>
   );
 }

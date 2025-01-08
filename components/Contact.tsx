@@ -61,7 +61,12 @@ export default function Contact() {
   );
 }
 
-function ContactItem({ icon: Icon, text }: { icon: any; text: string }) {
+interface ContactItemProps {
+  icon: React.ComponentType<{ className?: string }>;
+  text: string;
+}
+
+function ContactItem({ icon: Icon, text }: ContactItemProps) {
   return (
     <li className="flex items-center">
       <Icon className="text-orange-yellow-crayola mr-2" />
